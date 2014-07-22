@@ -1,0 +1,13 @@
+<h1>Create a profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+<%= form_for(@organization) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= render 'fields', :f => f %>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
+ </div>
+</div>

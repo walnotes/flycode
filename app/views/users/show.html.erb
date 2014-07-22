@@ -1,0 +1,25 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1> 
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span8">
+      <% if @user.organizations.any? %>
+      <h3>Organizations (<%= @user.organizations.count %>)</h3>
+		<%= link_to "Create new organization", createorg_path, :class => "movedown signup_button round"  %>
+      <ol class="organizations">
+          <%= render @organizations %>
+      </ol>
+        <%= will_paginate @organizations %>
+      <% end %>
+	  <%= link_to "Create new organization", createorg_path, :class => "movedown signup_button round"  %>
+  </div>
+</div>

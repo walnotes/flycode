@@ -1,0 +1,14 @@
+  <div class="center hero-unit">
+    <h1>Welcome to NGO360</h1>
+
+    <h2>
+      Search for organizations:
+    </h2>
+        <%= render 'shared/search_org_form' %>
+
+<% if !signed_in? %>
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+<% end %>
+
+  </div>

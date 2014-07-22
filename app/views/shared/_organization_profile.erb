@@ -1,0 +1,33 @@
+<div class="profile">
+	<span class="span2 name">
+		<%= link_to organization.name, organization %><br>
+		<% if current_user?(organization.user) %>
+		  <%= link_to "Edit", edit_organization_path(organization), :class => "editlink" %>
+		<% end %>
+	</span>
+	<span class="span4">
+		<% if organization.facebook.present? %>	
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-facebook-square fa-4x"), organization.facebook, title: organization.facebook, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+			
+		<% if organization.twitter.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-twitter-square fa-4x"), organization.twitter, title: organization.twitter, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+			
+		<% if organization.instagram.present? %>				
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-instagram-square fa-4x"), organization.instagram, title: organization.instagram, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+		
+		<% if organization.linkedin.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-linkedin-square fa-4x"), organization.linkedin, title: organization.linkedin, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+	
+		<% if organization.googleplus.present? %>				
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-googleplus-square fa-4x"), organization.googleplus, title: organization.googleplus, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+		<% if organization.join.present? %>
+			<%= link_to "Join", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
+		<% end %>
+			<%= link_to "Donate", organization.donate, title: organization.donate, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
+	</span>
+</div>

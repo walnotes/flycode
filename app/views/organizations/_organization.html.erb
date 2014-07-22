@@ -1,0 +1,45 @@
+<%= render :partial => 'shared/organization_profile', :locals => { :organization => organization } %>
+
+
+
+<% if false %>
+    <span class="name">
+      <%= link_to organization.name, organization %>
+      <% if current_user?(organization.user) %>
+        <%= link_to "Edit", edit_organization_path(organization), :class => "editlink" %>
+      <% end %>
+    </span>
+
+    <h5>Social Media</h5>
+	<%= link_to organization.facebook, title: organization.facebook, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://2013.heatherharkness.com/wp-content/uploads/2013/10/FacebookLogoApril2013-150x150.jpg', size: '50x50', alt: 'facebook' %>
+	<% end %>
+	<%= link_to organization.twitter, title: organization.twitter, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://socialtimes.com/files/2013/11/Twitter.Logo_-150x150.png', size: '50x50', alt: 'twitter' %>
+	<% end %>
+	<%= link_to organization.instagram, title: organization.instagram, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://www.canvaspress.com/blog/wp-content/uploads/2013/01/instagram.jpg', size: '50x50', alt: 'instagram' %>
+	<% end %>
+	<%= link_to organization.linkedin, title: organization.linkedin, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://www.computerandyou.net/wp-content/uploads/2012/07/LinkedInLogo-150x150.png', size: '50x50', alt: 'linkedin' %>
+	<% end %>
+	<%= link_to organization.googleplus, title: organization.googleplus, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://premiumwebsites.net/wp-content/uploads/2011/11/Google-Plus-Logo-150x150.png', size: '50x50', alt: 'googleplus' %>
+	<% end %>
+
+    <h5>Contact</h5>
+    <span class="address"><%= organization.address %></span>
+    <span class="url"><%= link_to organization.url, organization.url  %></span>	
+	
+    <!-- <span class="facebook"><%#= link_to organization.facebook, organization.facebook  %></span>
+    <span class="url"><%#= link_to organization.twitter, organization.twitter  %></span>
+    <span class="url"><%#= link_to organization.instagram, organization.instagram  %></span>
+    <span class="url"><%#= link_to organization.linkedin, organization.linkedin  %></span>
+    <span class="url"><%#= link_to organization.googleplus, organization.googleplus  %></span> -->
+
+	<% if organization.related.present? %>				
+	    <h5>Related Profiles</h5>
+	    <span class="related"><%= organization.related %></span>
+	<% end %>
+
+<% end %>
