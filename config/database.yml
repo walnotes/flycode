@@ -15,11 +15,11 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+# production:
+#   adapter: sqlite3
+#   database: db/production.sqlite3
+#   pool: 5
+#   timeout: 5000
 
 #development:
 #  adapter: postgresql
@@ -36,11 +36,11 @@ production:
 #  database: ngo360_test
 #  pool: 5
 
-#production:
-#  adapter: postgresql
-#  encoding: utf8
-#  database: ngo360_production
-#  pool: 5
+production:
+ adapter: postgresql
+ encoding: utf8
+ database: ngo360_production
+ pool: 5
 
 #cucumber:
 #  <<: *test
