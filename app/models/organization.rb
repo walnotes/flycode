@@ -7,8 +7,10 @@ class Organization < ActiveRecord::Base
 
   def self.search(search)
     if search
-  #    find(:all, :conditions => ['name ILIKE ?', "%#{search}%"])
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    # Heroku with PostGres
+     find(:all, :conditions => ['name ILIKE ?', "%#{search}%"])
+    # With sqlite
+     # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     else
       find(:all)
     end
