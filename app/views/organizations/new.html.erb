@@ -5,7 +5,7 @@
 <%= form_for(@organization) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <%= render 'fields', :f => f %>
-  <div class="actions">
+  <div class="actions btn">
     <%= f.submit "Submit" %>
   </div>
 <% end %>
