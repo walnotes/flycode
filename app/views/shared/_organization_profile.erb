@@ -15,7 +15,7 @@
 		<% end %>
 			
 		<% if organization.instagram.present? %>				
-			<%= link_to content_tag(:i,nil, :class=>"fa fa-instagram-square fa-4x"), organization.instagram, title: organization.instagram, rel: 'tooltip', relative: true, target: "_blank" %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-instagram fa-4x"), organization.instagram, title: organization.instagram, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
 		
 		<% if organization.linkedin.present? %>
@@ -28,6 +28,8 @@
 		<% if organization.join.present? %>
 			<%= link_to "Join", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
 		<% end %>
+		<% if organization.donate.present? %>
 			<%= link_to "Donate", organization.donate, title: organization.donate, rel: 'tooltip', relative: true, target: "_blank", class: "btn donate" %>
+		<% end %>
 	</span>
 </div>
