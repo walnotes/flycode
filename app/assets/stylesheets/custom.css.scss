@@ -93,7 +93,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: $gray;
   a {
     color: $gray;
     &:hover {
@@ -294,6 +294,9 @@ aside {
   display: block;
 }
 
+.join {
+	margin-top:-30px;
+}
 .editlink {
   display: inline;
   font-size: 70%;
