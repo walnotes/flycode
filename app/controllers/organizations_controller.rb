@@ -24,20 +24,20 @@ class OrganizationsController < ApplicationController
 
   def new
     @organization  = Organization.new
-    @title = "Create your organization"
+    @title = "Create a Profile"
   end
 
   def edit
-    @title = "Edit organization"
+    @title = "Edit Profile"
     @organization = Organization.find(params[:id])
   end
 
   def update
     @organization = Organization.find(params[:id])
     if @organization.update_attributes(params[:organization])
-      redirect_to @organization, :flash => { :success => "Profile updated." }
+      redirect_to @organization, :flash => { :success => "Profile updated" }
     else
-      @title = "Edit organization"
+      @title = "Edit Profile"
       render 'edit'
     end
   end
@@ -45,7 +45,7 @@ class OrganizationsController < ApplicationController
  def create
     @organization = current_user.organizations.build(params[:organization])
     if @organization.save
-      redirect_to @organization, :flash => { :success => "Organization created!" }
+      redirect_to @organization, :flash => { :success => "Profile created!" }
     else
       render 'pages/home'
     end
@@ -55,7 +55,7 @@ class OrganizationsController < ApplicationController
 
     def correct_user
       @organization = Organization.find(params[:id])
-      redirect_to(root_path, :flash => { :error => "The organization you tried to edit does not belong to you!" }) unless current_user?(@organization.user)
+      redirect_to(root_path, :flash => { :error => "The profile you tried to edit does not belong to you!" }) unless current_user?(@organization.user)
     end
 
 end
