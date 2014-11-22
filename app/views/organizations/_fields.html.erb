@@ -1,5 +1,6 @@
 <div class="row">
 	<span class="span7 profile_edit">
+		<%= gravatar_for current_user, size: 52 %>
 	  <%= f.label :name %>
 	  <%= f.text_field :name %>
 	</span>
