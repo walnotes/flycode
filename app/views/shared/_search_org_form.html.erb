@@ -1,10 +1,10 @@
 <div class="row">
 <%= form_tag("/searchorg", method: "get") do %>
-	<span class="span2" style="margin-top:5px;">
+	<!-- <span class="span2" style="margin-top:5px;">
 	  <%= label_tag(:name, "Search by name") %>
-	</span>
+	</span> -->
 	<span class="span4">
-	  <%= text_field_tag(:name, @name), placeholder => "Search for profiles by name" %>
+	  <%= text_field_tag(:name, @name), :placeholder => "Search for profiles by name" %>
 	</span>
 	<span class="span4">
 	  <%= submit_tag("Search", class: 'btn') %>
