@@ -2,7 +2,7 @@
 	<span class="span4">
 	  <i class='fa fa-facebook-square fa-4x'></i>
 	  <%= f.label :facebook %>
-	  <%= f.text_field :facebook, :placeholder => "Facebook" %>		
+	  <%= f.text_field :facebook, "Facebook", :onclick => 'if($(this).val()=="Facebook"){$(this).val("");};' %>		
 	</span>
 </div>
 
