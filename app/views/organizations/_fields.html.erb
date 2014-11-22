@@ -1,8 +1,6 @@
 <div class="row">
 	<span class="span4">
-		<% if organization.facebook.present? %>	
-			<%= link_to content_tag(:i,nil, :class=>"fa fa-facebook-square fa-4x"), organization.facebook, title: organization.facebook, rel: 'tooltip', relative: true, target: "_blank" %>
-		<% end %>
+	  <i class='fa fa-facebook-square fa-4x'></i>
 	  <%= f.label :facebook %>
 	  <%= f.text_field :facebook, :placeholder => "Facebook" %>		
 	</span>
