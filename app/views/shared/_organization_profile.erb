@@ -27,7 +27,7 @@
 		<% end %>
 
 		<% if organization.url.present? %>
-			<%= link_to "Website", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
+			<%= link_to "Website", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
 
 		<% if organization.join.present? %>
