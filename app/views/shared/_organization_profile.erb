@@ -25,6 +25,11 @@
 		<% if organization.googleplus.present? %>				
 			<%= link_to content_tag(:i,nil, :class=>"fa fa-googleplus-square fa-4x"), organization.googleplus, title: organization.googleplus, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
+
+		<% if organization.url.present? %>
+			<%= link_to "Website", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
+		<% end %>
+
 		<% if organization.join.present? %>
 			<%= link_to "Join", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
 		<% end %>
