@@ -1,13 +1,13 @@
-<h1>Edit Profile</h1>
-
+<h1 class="text-left">Edit Profile</h1>
+<p>A profile is a collection of related social media links.</p>
 <div class="row">
-  <div class="span6 offset3">
-<%= form_for(@organization) do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-  <%= render 'fields', :f => f %>
-  <div class="actions">
-    <%= f.submit "Update", class: 'btn' %>
-  </div>
-<% end %>
+  <div class="span6">
+	<%= form_for(@organization) do |f| %>
+	  <%= render 'shared/error_messages', :object => f.object %>
+	  <%= render 'fields', :f => f %>
+	  <div class="actions">
+	    <%= f.submit "Update", class: 'btn' %>
+	  </div>
+	<% end %>
   </div>
 </div>
