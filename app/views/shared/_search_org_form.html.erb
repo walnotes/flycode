@@ -1,13 +1,15 @@
 <div class="row">
 <%= form_tag("/searchorg", method: "get") do %>
-	<span class="span6">
-	  <%= text_field_tag(:name, @name) %>
-	</span>
-	<span class="span2">
-	  <%= submit_tag("Search for profiles", class: 'btn') %>
+	<span class="span2" style="margin-top:5px;">
+	  <%= label_tag(:name, "Search for a profile") %>
 	</span>
 	<span class="span4">
-	  <%= link_to "or create a new profile", createorg_path, :class => "movedown signup_button round"  %>
+	  <%= text_field_tag(:name, @name) %>
+	</span>
+	<span class="span4">
+	  <%= submit_tag("Search", class: 'btn') %>
+	  <%= link_to "Create a new profile", createorg_path, :class => "movedown signup_button round"  %>
 	</span>
 <% end %>
 </div>
+
