@@ -1,14 +1,22 @@
-  <div class="center hero-unit">
+  <!-- <div class="center hero-unit">
     <h1>Welcome to Flycode</h1>
-
-    <!-- <h2>
-      Search for profiles
-    </h2> -->
     <%= render 'shared/search_org_form' %>
+		<% if !signed_in? %>
+		    <%= link_to "Sign up now!", signup_path,
+		                                class: "btn btn-large btn-primary" %>
+		<% end %>
+  </div> -->
 
-<% if !signed_in? %>
-    <%= link_to "Sign up now!", signup_path,
-                                class: "btn btn-large btn-primary" %>
-<% end %>
 
+
+<div class="jumbotron">
+  <div class="container-fluid">
+      <h1>Welcome to Flycode</h1>
+	    <%= render 'shared/search_org_form' %>
   </div>
+	<% if !signed_in? %>
+	    <%= link_to "Sign up now!", signup_path,
+	                                class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
+
