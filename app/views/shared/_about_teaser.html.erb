@@ -4,10 +4,10 @@
             <h2 class="text-left">An Account</h2>
             <p style="line-height:1.2em;">With an account you will be able to create profiles.</p>
 						<% if !signed_in? %>
-							<div class="center">	
+							<p>	
 						    <%= link_to "Create an account now!", signup_path,
 						                                class: "btn btn-large btn-primary" %>
-							</div>
+							</p>
 						<% end %>
         </div>
         <div class="col-xs-4">

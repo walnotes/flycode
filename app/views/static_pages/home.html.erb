@@ -16,12 +16,5 @@
   <h1>Welcome to Flycode</h1>
 	<hr>
   <%= render 'shared/about_teaser' %>
-	<% if !signed_in? %>
-	<div class="row">
-		<div class="center">	
-	    <%= link_to "Create an account now!", signup_path,
-	                                class: "btn btn-large btn-primary" %>
-		</div>
-	</div>
-	<% end %>
+	<hr>
 </div>
