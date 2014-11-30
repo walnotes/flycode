@@ -8,7 +8,7 @@
 
 # users = User.create([{name: 'KingKong', email: 'walterchkoning@yahoo.com', password: '123faker'}])
 users = User.create(name: 'KingKong', email: 'walterchkoning@yahoo.com', password: '123faker')
-Organization.create(name:'Test', url: 'http://www.test.com', linkedin: 'https://www.linkedin.com/pub/walter-koning/1/b02/a51', user_id: User.find_by(email: 'walterchkoning@yahoo.com')
+Organization.create(name:'Test', url: 'http://www.test.com', linkedin: 'https://www.linkedin.com/pub/walter-koning/1/b02/a51', user_id: User.find_by(email: 'walterchkoning@yahoo.com'))
 
 # foo = User.create(name: "Foo", email: "foo@bar.com")
 # User.find_by(email: "mhartl@example.com")
