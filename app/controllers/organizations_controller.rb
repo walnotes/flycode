@@ -13,7 +13,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     @name = @organization.name
     @address = @organization.address
-    @website = @organization.url
+    @url = @organization.url
     @facebook = @organization.facebook
     @twitter = @organization.twitter
     @instagram = @organization.instagram
