@@ -2,7 +2,7 @@
 
 <div class="row">
 <% if @organizations.any? %>
- <div class="span8">
+ <div class="span10">
         <ol class="organizations">
         	<% @organizations.each do | organization |  %>
 			<%= render :partial => 'shared/organization_profile', :locals => { :organization => organization } %>
