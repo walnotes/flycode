@@ -1,9 +1,6 @@
 <div class="profile">
 	<span class="span2 name">
-		<%= link_to organization.name, organization %><br>
-		<% if current_user?(organization.user) %>
-		  <%= link_to "Edit", edit_organization_path(organization), :class => "editlink" %>
-		<% end %>
+		<%= link_to organization.name, organization %>
 	</span>
 	<span class="span4">
 		<% if organization.facebook.present? %>	
@@ -35,6 +32,11 @@
 		<% end %>
 		<% if organization.donate.present? %>
 			<%= link_to "Donate", organization.donate, title: organization.donate, rel: 'tooltip', relative: true, target: "_blank", class: "btn donate" %>
+		<% end %>
+	</span>
+	<span class="span2 name">
+		<% if current_user?(organization.user) %>
+		  <%= link_to "Edit", edit_organization_path(organization), :class => "editlink btn btn-large btn-primary" %>
 		<% end %>
 	</span>
 </div>
