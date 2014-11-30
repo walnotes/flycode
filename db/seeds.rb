@@ -7,8 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # users = User.create([{name: 'KingKong', email: 'walterchkoning@yahoo.com', password: '123faker'}])
-users = User.create(name: 'KingKong', email: 'walterchkoning@yahoo.com', password: '123faker')
-Organization.create(name:'Test', url: 'http://www.test.com', linkedin: 'https://www.linkedin.com/pub/walter-koning/1/b02/a51', user_id: User.first)
+User.create(name: "KingKong", email: "walterchkoning@yahoo.com", password: "123faker")
+# Organization.create(name:"Test", url: "http://www.test.com", linkedin: "https://www.linkedin.com/pub/walter-koning/1/b02/a51", user_id: User.first.user_id)
+Organization.create(name:"Test", url: "http://www.test.com", linkedin: "https://www.linkedin.com/pub/walter-koning/1/b02/a51", user_id: "1")
 
+# User.new(name: "Example User", email: "user@example.com")
 # foo = User.create(name: "Foo", email: "foo@bar.com")
 # User.find_by(email: "mhartl@example.com")
