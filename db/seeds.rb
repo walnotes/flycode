@@ -12,7 +12,10 @@
 
 # This format worked. TODO: Delete this seed user after I figure out how to get the organization seed data working.
 #User.create!(:name => "KingKong", :email => "walterchkoning@yahoo.com", :password => "123faker", :password_confirmation => "123faker")
-Organization.create!(:name => "Test", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => 1)
+# Organization.create!(:name => "Test", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => 1)
+Organization.create!(:name => "KingKongProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => User.find_by_name('KingKong').id)
+
+
 
 # User.new(name: "Example User", email: "user@example.com")
 # foo = User.create(name: "Foo", email: "foo@bar.com")
