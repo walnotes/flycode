@@ -16,8 +16,8 @@
 
 #User.delete_all	
 User.find(4).delete
-new_user = User.create!(:name => "Retlaw", :email => "thisiswk@gmail.com", :password => "123faker", :password_confirmation => "123faker")
-Organization.create!(:name => "RetlawProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => new_user.id)
+#new_user = User.create!(:name => "Retlaw", :email => "thisiswk@gmail.com", :password => "123faker", :password_confirmation => "123faker")
+#Organization.create!(:name => "RetlawProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => new_user.id)
 
 # User.new(name: "Example User", email: "user@example.com")
 # foo = User.create(name: "Foo", email: "foo@bar.com")
