@@ -14,11 +14,10 @@
 #User.create!(:name => "KingKong", :email => "walterchkoning@yahoo.com", :password => "123faker", :password_confirmation => "123faker")
 # Organization.create!(:name => "Test", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => 1)
 
-
-User.create!(:name => "Retlaw", :email => "thisiswk@gmail.com", :password => "123faker", :password_confirmation => "123faker")
-Organization.create!(:name => "KingKongProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => User.find_by_name('Retlaw').id)
-
-
+#User.delete_all	
+User.find(4).delete
+new_user = User.create!(:name => "Retlaw", :email => "thisiswk@gmail.com", :password => "123faker", :password_confirmation => "123faker")
+Organization.create!(:name => "RetlawProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => new_user.id)
 
 # User.new(name: "Example User", email: "user@example.com")
 # foo = User.create(name: "Foo", email: "foo@bar.com")
