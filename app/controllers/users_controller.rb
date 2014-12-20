@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # @microposts = @user.microposts.paginate(page: params[:page])
     @organizations = @user.organizations.paginate(page: params[:page])
+    redirect_to root_path if @organizations.nil?
   end
 
   def new

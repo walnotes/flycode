@@ -43,9 +43,9 @@ class OrganizationsController < ApplicationController
   end
 
   def destroy
-    Organization.find(params[:id]).destroy
-    flash[:success] = "Profile destroyed."
-    redirect_to users_url
+    # Organization.find(params[:id]).destroy
+    # flash[:success] = "Profile destroyed."
+    # redirect_to users_url
   end
 
  def create
