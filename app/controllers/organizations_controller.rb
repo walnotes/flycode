@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
  before_filter :signed_in_user,
                  :only => [:index, :edit, :update, :create]
-  before_filter :correct_user, :only => [:edit, :update, :destroy]
+  before_filter :correct_user, :only => [:edit, :update]
 
   def search
     @name = params[:name]
@@ -61,7 +61,6 @@ class OrganizationsController < ApplicationController
 
     def correct_user
       @organization = Organization.find(params[:id])
-      redirect_to root_path if @organization.nil?
       redirect_to(root_path, :flash => { :error => "The profile you tried to edit does not belong to you!" }) unless current_user?(@organization.user)
     end
 
