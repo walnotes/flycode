@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
  before_filter :signed_in_user,
-                 :only => [:index, :edit, :update, :create]
-  before_filter :correct_user, :only => [:edit, :update]
+                 :only => [:index, :edit, :update, :create, :destroy]
+  before_filter :correct_user, :only => [:edit, :update, :destroy]
 
   def search
     @name = params[:name]
@@ -40,6 +40,20 @@ class OrganizationsController < ApplicationController
       @title = "Edit Profile"
       render 'edit'
     end
+  end
+
+  def destroy
+    @organization = Organization.find(params[:id])
+    @organization.destroy
+    redirect_back_or root_path
+    # render 'pages/home'
+
+    # if @organization.update_attributes(params[:organization])
+    #   redirect_to 'pages/home', :flash => { :success => "Profile deleted" }
+    # else
+    #   @title = "Edit Profile"
+    #   render 'edit'
+    # end
   end
 
  def create
