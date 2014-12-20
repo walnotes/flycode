@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
 
-  has_many :organizations
+  has_many :organizations, dependent: :destroy
   accepts_nested_attributes_for :organizations
 
   has_many :microposts, dependent: :destroy
