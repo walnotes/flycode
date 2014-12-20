@@ -45,8 +45,8 @@ class OrganizationsController < ApplicationController
   def destroy
     @organization = Organization.find(params[:id])
     @organization.destroy
-    redirect_back_or root_path
-    # render 'pages/home'
+    # redirect_back_or root_path
+    render 'pages/home'
 
     # if @organization.update_attributes(params[:organization])
     #   redirect_to 'pages/home', :flash => { :success => "Profile deleted" }
