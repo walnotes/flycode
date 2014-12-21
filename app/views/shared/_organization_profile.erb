@@ -40,8 +40,8 @@
       <%#= link_to "delete", destroy_organization_path(organization), :class => "deletelink", :confirm => "Delete this profile?" %>
       <%#= link_to "delete", organization, method: :delete,
                           data: { confirm: "You sure?" } %>      
-      <%= link_to "delete", destroy_organization_path(organization), method: :delete,
-                          data: { confirm: "Delete this profile?" } %>      
 		<% end %>
+    <%= link_to "delete", destroy_organization_path(organization), method: :delete,
+                        data: { confirm: "Delete this profile?" } %>      
 	</span>
 </div>
