@@ -42,16 +42,22 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @organization = Organization.find(params[:id])
+  #   @organization.destroy
+  #   # Organization.find(params[:id]).destroy
+  #   flash[:success] = "Profile destroyed."
+  #   # redirect_to users_url
+  # end
+  
   def destroy
-    @organization = Organization.find(params[:id])
-    @organization.destroy
-    # Organization.find(params[:id]).destroy
-    flash[:success] = "Profile destroyed."
-    # render 'pages/home'
-    # redirect_to users_url
+    Organization.find(params[:id]).destroy
+    flash[:success] = "Organization destroyed."
+    redirect_to users_url
   end
   
- def create
+  
+  def create
     @organization = current_user.organizations.build(params[:organization])
     if @organization.save
       redirect_to @organization, :flash => { :success => "Profile created!" }
