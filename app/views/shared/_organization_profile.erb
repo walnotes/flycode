@@ -45,7 +45,7 @@
 		<% end %>
 	</span>
 
-  <%= form_for(current_user.organizations.find(params[:id])),
+  <%= form_for(organizations.find(params[:id])),
                html: { method: :delete },
                remote: true) do |f| %>
     <%= f.submit "delete" %>
