@@ -22,6 +22,11 @@ SampleApp::Application.routes.draw do
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
+  # WK: This is a placeholder in case I need it later.
+  # match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+
+  match 'organizations/:id' => 'organizations#destroy', :via => :delete, :as => :destroy_organization_path
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
