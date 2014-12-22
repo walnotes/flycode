@@ -37,9 +37,6 @@
 	<span class="span2 name">
 		<% if current_user?(organization.user) %>
       <%= link_to "Edit", edit_organization_path(organization), :class => "editlink btn btn-large btn-primary" %>
-      <%#= link_to "delete", destroy_organization_path(organization), :class => "deletelink", :confirm => "Delete this profile?" %>
-    <%#= link_to "delete", destroy_organization_path(organization), method: :delete,
-                        data: { confirm: "Delete this profile?" } %>      
 		<% end %>
 	</span>
 
