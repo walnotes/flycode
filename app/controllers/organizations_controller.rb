@@ -50,11 +50,11 @@ class OrganizationsController < ApplicationController
   #   # redirect_to users_url
   # end
   
-  def destroy
-    Organization.find(params[:id]).destroy
-    flash[:success] = "Organization destroyed."
-    redirect_to users_url
-  end
+  # def destroy
+  #   Organization.find(params[:id]).destroy
+  #   flash[:success] = "Organization destroyed."
+  #   redirect_to users_url
+  # end
   
   
   def create
