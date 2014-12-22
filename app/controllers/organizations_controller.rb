@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
  before_filter :signed_in_user,
                  :only => [:index, :edit, :update, :create]
-  before_filter :correct_user, :only => [:edit, :update, :destroy]
+  before_filter :correct_user, :only => [:edit, :update]
 
   def search
     @name = params[:name]
