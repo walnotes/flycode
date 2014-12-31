@@ -1,5 +1,5 @@
 class Organization < ActiveRecord::Base
-  attr_accessible :name, :address, :url, :facebook, :twitter, :instagram, :linkedin, :googleplus, :join, :donate, :audio, :video, :related
+  attr_accessible :name, :address, :url, :facebook, :twitter, :instagram, :linkedin, :googleplus, :join, :donate, :related
   belongs_to :user
 
   validates :user_id, presence: true
