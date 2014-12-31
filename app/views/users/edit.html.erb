@@ -19,10 +19,6 @@
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-		<% if current_user.admin? && !current_user?(@user) %>
-		  | <%= link_to "Delete Account", user_path(@user), method: :delete,
-		                                data: { confirm: "You sure?" } %>
-		<% end %>
     <% end %>
 
     <%= gravatar_for @user %>
