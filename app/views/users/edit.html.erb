@@ -19,10 +19,8 @@
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-	  <% if current_user?(user) %>
-	    <%= link_to "delete", user, method: :delete,
+	    | <%= link_to "Delete Account", user, method: :delete,
 	                                  data: { confirm: "You sure?" } %>
-	  <% end %>
 
     <% end %>
 
