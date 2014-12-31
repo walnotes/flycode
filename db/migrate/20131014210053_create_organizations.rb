@@ -12,6 +12,8 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :join
       t.string :donate
       t.string :related
+      t.string :audio
+      t.string :video
       t.integer :user_id
 
       t.timestamps

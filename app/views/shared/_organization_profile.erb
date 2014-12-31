@@ -27,6 +27,14 @@
 			<%= link_to "Website", organization.url, title: organization.url, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
 
+		<% if organization.audio.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-volume-up fa-4x"), organization.audio, title: organization.audio, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+
+		<% if organization.video.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-play-circle-o fa-4x"), organization.video, title: organization.video, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+
 		<% if organization.join.present? %>
 			<%= link_to "Join", organization.join, title: organization.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
 		<% end %>
