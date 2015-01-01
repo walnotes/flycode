@@ -18,6 +18,14 @@
 		<% if organization.linkedin.present? %>
 			<%= link_to content_tag(:i,nil, :class=>"fa fa-linkedin-square fa-4x"), organization.linkedin, title: organization.linkedin, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
+
+		<% if organization.audio.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-volume-up fa-4x"), organization.audio, title: organization.audio, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+
+		<% if organization.video.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-play-circle-o fa-4x"), organization.video, title: organization.video, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
 	
 		<% if organization.googleplus.present? %>				
 			<%= link_to content_tag(:i,nil, :class=>"fa fa-googleplus-square fa-4x"), organization.googleplus, title: organization.googleplus, rel: 'tooltip', relative: true, target: "_blank" %>
