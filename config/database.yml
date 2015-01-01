@@ -5,11 +5,11 @@
 
 ## WK: Use development with sqlite3 for local work
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
-# development:
-#   adapter: sqlite3
-#   database: db/development.sqlite3
-#   pool: 5
-#   timeout: 5000
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 ## Warning: The database defined as "test" will be erased and
 ## re-generated from your development database when you run "rake".
@@ -28,15 +28,15 @@
 #   pool: 5
 #   timeout: 5000
 
-## WK: Use test and production with postgresql for Heroku work
-development:
- adapter: postgresql
- encoding: utf8
- database: ngo360_development
- pool: 5
- username:
- password:
+# development:
+#  adapter: postgresql
+#  encoding: utf8
+#  database: ngo360_development
+#  pool: 5
+#  username:
+#  password:
 
+## WK: Use test and production with postgresql for Heroku work
 test: &test
  adapter: postgresql
  encoding: utf8
