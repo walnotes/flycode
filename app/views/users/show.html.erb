@@ -13,7 +13,7 @@
   </aside> -->
 
 <!-- span10 makes it fit -->
-  <div class="">
+  <div class="span10">
 	    <section>
 	    <%= gravatar_for @user %>
 	    <%= @user.name %>
@@ -22,13 +22,15 @@
 	    <section>
 	      <%= render 'shared/stats' %>
 	    </section>
-		
-      <% if @user.organizations.any? %>
+
       <h3>Profiles (<%= @user.organizations.count %>)</h3>
 			<%= link_to "Create a profile", createorg_path, :class => "movedown signup_button round"  %>
-      <ol class="organizations">
-          <%= render @organizations %>
-      </ol>
+  </div>
+  <div class="">
+      <% if @user.organizations.any? %>
+	      <ol class="organizations">
+	          <%= render @organizations %>
+	      </ol>
         <%= will_paginate @organizations %>
       <% end %>
   </div>
