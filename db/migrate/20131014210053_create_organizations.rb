@@ -13,7 +13,6 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :donate
       t.string :related
       t.integer :user_id
-
       t.timestamps
     end
   end

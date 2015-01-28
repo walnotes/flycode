@@ -2,7 +2,7 @@
 
 <div class="row">
 <% if @organizations.any? %>
- <div class="span10">
+	<div class="">
         <ol class="organizations">
         	<% @organizations.each do | organization |  %>
 			<%= render :partial => 'shared/organization_profile', :locals => { :organization => organization } %>
@@ -10,10 +10,15 @@
 
           <%#= render @organizations %>
         </ol>
-  </div>
-  <%= will_paginate @organizations %>
+	</div>
+	<div class="span10">
+	  <%= will_paginate @organizations %>
+	</div>
 <% else %>
-<h4>No results matching that query</h4>
+	<div class="span10">
+		<h4>No results matching that query.</h4>
+		<p>Tip: Leave the search field blank to search for all profiles</p>
+	</div>
 <% end %>
 </div>
 

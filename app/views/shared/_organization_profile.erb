@@ -2,7 +2,7 @@
 	<span class="span2 name">
 		<%= link_to organization.name, organization %>
 	</span>
-	<span class="span4">
+	<span class="span6">
 		<% if organization.facebook.present? %>	
 			<%= link_to content_tag(:i,nil, :class=>"fa fa-facebook-square fa-4x"), organization.facebook, title: organization.facebook, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
@@ -17,6 +17,14 @@
 		
 		<% if organization.linkedin.present? %>
 			<%= link_to content_tag(:i,nil, :class=>"fa fa-linkedin-square fa-4x"), organization.linkedin, title: organization.linkedin, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+
+		<% if organization.audio.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-volume-up fa-4x"), organization.audio, title: organization.audio, rel: 'tooltip', relative: true, target: "_blank" %>
+		<% end %>
+
+		<% if organization.video.present? %>
+			<%= link_to content_tag(:i,nil, :class=>"fa fa-play-circle-o fa-4x"), organization.video, title: organization.video, rel: 'tooltip', relative: true, target: "_blank" %>
 		<% end %>
 	
 		<% if organization.googleplus.present? %>				

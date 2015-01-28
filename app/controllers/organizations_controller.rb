@@ -21,6 +21,8 @@ class OrganizationsController < ApplicationController
     @linkedin = @organization.linkedin
     @googleplus = @organization.googleplus
     @related = @organization.related
+    @audio = @organization.audio
+    @video = @organization.video
   end
 
   def new
