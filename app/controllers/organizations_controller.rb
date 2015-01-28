@@ -11,6 +11,7 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
+    @organization = OrganizationsHelper.decode(@organization)
     @name = @organization.name
     @address = @organization.address
     @url = @organization.url
@@ -34,6 +35,7 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization = Organization.find(params[:id])
+    @organization = OrganizationsHelper.encode(@organization)
     if @organization.update_attributes(params[:organization])
       redirect_to @organization, :flash => { :success => "Profile updated" }
     else
@@ -57,6 +59,9 @@ class OrganizationsController < ApplicationController
   
   def create
     @organization = current_user.organizations.build(params[:organization])
+    @organization = OrganizationsHelper.encode(@organization)
+
+
     if @organization.save
       redirect_to @organization, :flash => { :success => "Profile created!" }
     else
