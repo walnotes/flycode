@@ -3,8 +3,6 @@ class OrganizationsController < ApplicationController
                  :only => [:index, :edit, :update, :create]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
 
-  include OrganizationsHelper
-
   def search
     @name = params[:name]
     @results = Organization.search(@name)
@@ -13,7 +11,7 @@ class OrganizationsController < ApplicationController
 
   def show
     @organization = Organization.find(params[:id])
-    @organization = OrganizationsHelper.decode(@organization)
+    # @organization = OrganizationsHelper.decode(@organization)
     @name = @organization.name
     @address = @organization.address
     @url = @organization.url
@@ -39,7 +37,7 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization = Organization.find(params[:id])
-    @organization = OrganizationsHelper.encode(@organization)
+    # @organization = OrganizationsHelper.encode(@organization)
     if @organization.update_attributes(params[:organization])
       redirect_to @organization, :flash => { :success => "Profile updated" }
     else
