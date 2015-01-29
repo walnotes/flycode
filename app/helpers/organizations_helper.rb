@@ -26,25 +26,25 @@ module OrganizationsHelper
 
   # Take the value stored in the database and decode the domaain and username
   def decode(organization)
-    case organization
-      when organization.twitter
-        if organization.twitter =~ /.*twitter.com\/(.*)$/
-          organization.twitter = $1
-        end
-      when organization.instagram
-        if organization.instagram =~ /.*instagram.com\/(.*)$/
-          organization.instagram = $1
-        end
-      when organization.facebook
-        if organization.facebook =~ /.*facebook.com\/(.*)$/
-          organization.facebook = $1
-        end
-      when organization.linkedin
-        if organization.linkedin =~ /.*linkedin.com\/(.*)$/
-          organization.linkedin = $1
-        end
-      else
-      end
+    # case organization
+    #   when organization.twitter
+    #     if organization.twitter =~ /.*twitter.com\/(.*)$/
+    #       organization.twitter = $1
+    #     end
+    #   when organization.instagram
+    #     if organization.instagram =~ /.*instagram.com\/(.*)$/
+    #       organization.instagram = $1
+    #     end
+    #   when organization.facebook
+    #     if organization.facebook =~ /.*facebook.com\/(.*)$/
+    #       organization.facebook = $1
+    #     end
+    #   when organization.linkedin
+    #     if organization.linkedin =~ /.*linkedin.com\/(.*)$/
+    #       organization.linkedin = $1
+    #     end
+    #   else
+    #   end
     organization
   end
     
