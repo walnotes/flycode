@@ -2,25 +2,25 @@ module OrganizationsHelper
 
   # Take the user added value from the form and encode it with the domaain and username
   def encode(organization)
-    case organization
-      when organization.twitter
-        if !organization.twitter.nil?
-          organization.twitter="https://twitter.com/" + organization.twitter
-        end
-      when organization.instagram
-        if !organization.instagram.nil?
-          organization.instagram="https://instagram.com/" + organization.instagram
-        end
-      when organization.facebook
-        if !organization.facebook.nil?
-          organization.facebook="https://facebook.com/" + organization.facebook
-        end
-      when organization.linkedin
-        if !organization.linkedin.nil?
-          organization.linkedin="https://linkedin.com/" + organization.linkedin
-        end
-      else
-    end
+    # case organization
+    #   when organization.twitter
+    #     if !organization.twitter.nil?
+    #       organization.twitter="https://twitter.com/" + organization.twitter
+    #     end
+    #   when organization.instagram
+    #     if !organization.instagram.nil?
+    #       organization.instagram="https://instagram.com/" + organization.instagram
+    #     end
+    #   when organization.facebook
+    #     if !organization.facebook.nil?
+    #       organization.facebook="https://facebook.com/" + organization.facebook
+    #     end
+    #   when organization.linkedin
+    #     if !organization.linkedin.nil?
+    #       organization.linkedin="https://linkedin.com/" + organization.linkedin
+    #     end
+    #   else
+    # end
     organization  
   end
 
