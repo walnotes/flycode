@@ -3,6 +3,8 @@ class OrganizationsController < ApplicationController
                  :only => [:index, :edit, :update, :create]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
 
+  include OrganizationsHelper
+
   def search
     @name = params[:name]
     @results = Organization.search(@name)
