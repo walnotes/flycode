@@ -2,7 +2,7 @@ module OrganizationsHelper
 
   # Take the user added value from the form and encode it with the domaain and username
   def encode(organization)
-    case
+    case organization
       when organization.twitter
         if !organization.twitter.nil?
           organization.twitter="https://twitter.com/" + organization.twitter
@@ -26,7 +26,7 @@ module OrganizationsHelper
 
   # Take the value stored in the database and decode the domaain and username
   def decode(organization)
-    case
+    case organization
       when organization.twitter
         if organization.twitter =~ /.*twitter.com\/(.*)$/
           organization.twitter = $1
