@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
 
-  has_many :organizations
-  accepts_nested_attributes_for :organizations
+  has_many :profiles
+  accepts_nested_attributes_for :profiles
 
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -42,7 +41,7 @@ class User < ActiveRecord::Base
 
   private
 
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
-    end
+  def create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64
+  end
 end

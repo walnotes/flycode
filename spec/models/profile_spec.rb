@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe Organization do
+describe Profile do
 
   let(:user) { FactoryGirl.create(:user) }
-  before { @organization = user.organizations.build(name: "Test Org Name ", address: "123 Main st, Town, US, 90210", url: "http://www.google.com") }
+  before { @profile = user.profiles.build(name: "Test Org Name ", address: "123 Main st, Town, US, 90210", url: "http://www.google.com") }
 
-  subject { @organization }
+  subject { @profile }
 
   it { should respond_to(:name) }
   it { should respond_to(:address) }
@@ -19,23 +19,23 @@ describe Organization do
   describe "accessible attributes" do
     it "should not allow access to user_id" do
       expect do
-        Organization.new(user_id: user.id)
+        Profile.new(user_id: user.id)
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end
   end
 
   describe "when user_id is not present" do
-    before { @organization.user_id = nil }
+    before { @profile.user_id = nil }
     it { should_not be_valid }
   end
 
   describe "with blank name" do
-    before { @organization.name = " " }
+    before { @profile.name = " " }
     it { should_not be_valid }
   end
 
   describe "with content that is too long" do
-    before { @organization.name = "a" * 141 }
+    before { @profile.name = "a" * 141 }
     it { should_not be_valid }
   end
 end

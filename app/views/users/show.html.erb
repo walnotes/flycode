@@ -14,24 +14,24 @@
 
 <!-- span10 makes it fit -->
   <div class="span10">
-	    <section>
-	    <%= gravatar_for @user %>
-	    <%= @user.name %>
-	    </section>
+      <section>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+      </section>
 
-	    <section>
-	      <%= render 'shared/stats' %>
-	    </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
 
-      <h3>Profiles (<%= @user.organizations.count %>)</h3>
-			<%= link_to "Create a profile", createorg_path, :class => "movedown signup_button round"  %>
+      <h3>Profiles (<%= @user.profiles.count %>)</h3>
+      <%= link_to "Create a profile", create_profile_path, :class => "movedown signup_button round"  %>
   </div>
   <div class="">
-      <% if @user.organizations.any? %>
-	      <ol class="organizations">
-	          <%= render @organizations %>
-	      </ol>
-        <%= will_paginate @organizations %>
+      <% if @user.profiles.any? %>
+        <ol class="profiles">
+            <%= render @profiles %>
+        </ol>
+        <%= will_paginate @profiles %>
       <% end %>
   </div>
 </div>

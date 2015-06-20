@@ -1,30 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
-gem 'bootstrap-sass', '2.1'
-gem 'bcrypt-ruby', '3.0.1'
-gem 'faker', '1.0.1'
-gem 'will_paginate', '3.0.3'
+gem 'rails', '4.2.2'
+gem 'bootstrap-sass', '3.3.5'
+gem 'bcrypt-ruby', '3.1.5'
+gem 'faker', '1.4.3'
+gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.6'
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails', '4.0.4'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
-#  gem 'pg', '0.12.2'
+  gem 'sqlite3', '1.3.10'
+  # gem 'pg', '0.12.2'
 #  gem 'mysql2'
-  gem 'rspec-rails', '2.11.0'
-  gem 'guard-rspec', '1.2.1'
-  gem 'guard-spork', '1.2.0'
-  gem 'childprocess', '0.3.6'
+  gem 'rspec-rails', '3.3.2'
+  gem 'guard-rspec', '4.5.2'
+  gem 'guard-spork', '2.1.0'
+  gem 'childprocess', '0.5.6'
   gem 'spork', '0.9.2'
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.5'
-  gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '1.2.3'
+  gem 'sass-rails', '5.0.3'
+  gem 'coffee-rails', '4.1.0'
+  gem 'uglifier', '2.7.1'
 end
 
 group :test do

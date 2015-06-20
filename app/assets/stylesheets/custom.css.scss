@@ -205,8 +205,7 @@ input {
 }
 
 .field_with_errors {
-  @extend .control-group;
-  @extend .error;
+  @extend .has-error;
  }
 
  /* users index */
@@ -252,7 +251,7 @@ aside {
 }
 
 
-/* organizations */
+/* profiles */
 .profile {
   margin-top: 15px;
   display: inline-block;
