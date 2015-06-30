@@ -1,48 +1,48 @@
-<div class="row">
-  <span class="span7 offset1 profile_edit">
+<div>
+  <div class="form-group">
     <%= f.label :name %> 
     <%= f.text_field :name %>
     <small style="color:red;">* Required</small>
-  </span>
-  <span class="span7 offset1 profile_edit">
+  </div>
+  <div class="form-group">
     <%= f.label :url %>
     <%= f.text_field :url %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
     <span class="span1"><i class='fa fa-facebook-square fa-4x'></i></span>
     <%= f.label :facebook %>
     <%= f.text_field :facebook %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
     <span class="span1"><i class='fa fa-twitter-square fa-4x'></i></span>
     <%= f.label :twitter %>
     <%= f.text_field :twitter %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
     <span class="span1"><i class='fa fa-instagram fa-4x'></i></span>
     <%= f.label :instagram %>
     <%= f.text_field :instagram %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
     <span class="span1"><i class='fa fa-linkedin-square fa-4x'></i></span>
     <%= f.label :linkedIn %>
     <%= f.text_field :linkedin %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
     <span class="span1"><i class='fa fa-volume-up fa-4x'></i></span>
     <%= f.label :audio %>
     <%= f.text_field :audio %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
     <span class="span1"><i class='fa fa-play-circle-o fa-4x'></i></span>
     <%= f.label :video %>
     <%= f.text_field :video %>
-  </span>
-  <span class="span7 profile_edit">
+  </div>
+  <div class="form-group">
   <span class="span1"><i class='fa fa-play-circle-o fa-4x'></i></span>
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />
     <%= f.text_field :tag_list, options = {'value' => @profile.tag_list.to_s, 'data-role' => 'tagsinput'} %>
-  </span>
+  </div>
   <!-- <span class="span7 profile_edit">
     <span class="span1"><i class='fa fa-google-plus-square fa-4x'></i></span>
     <%#= f.label :googleplus %>

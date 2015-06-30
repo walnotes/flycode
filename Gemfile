@@ -11,8 +11,6 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.10'
-  # gem 'pg', '0.12.2'
-#  gem 'mysql2'
   gem 'rspec-rails', '3.3.2'
   gem 'guard-rspec', '4.5.2'
   gem 'guard-spork', '2.1.0'
