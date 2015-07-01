@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # @microposts = @user.microposts.paginate(page: params[:page])
-    @organizations = @user.organizations.paginate(page: params[:page])
+    @profiles = @user.profiles.paginate(page: params[:page])
   end
 
   def new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to Flycode!"
@@ -63,13 +63,16 @@ class UsersController < ApplicationController
   end
 
   private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
 
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

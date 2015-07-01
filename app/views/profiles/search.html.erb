@@ -1,0 +1,22 @@
+<%= render 'shared/search_org_form' %>
+
+<div class="row">
+  <% if @profiles.any? %>
+    <div class="">
+      <ol class="profiles">
+        <% @profiles.each do | profile |  %>
+          <%= render :partial => 'shared/profile', :locals => { :profile => profile } %>
+        <% end %>
+        <%#= render @profiles %>
+      </ol>
+    </div>
+    <div class="span10">
+      <%= will_paginate @profiles %>
+    </div>
+  <% else %>
+    <div class="span10">
+      <h4>No results matching that query.</h4>
+      <p>Tip: Leave the search field blank to search for all profiles</p>
+    </div>
+  <% end %>
+</div>

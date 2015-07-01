@@ -1,0 +1,45 @@
+<%= render :partial => 'shared/profile', :locals => { :profile => profile } %>
+
+<!-- Below this is not used -->
+
+<% if false %>
+  <span class="name">
+    <%= link_to profile.name, profile %>
+    <% if current_user?(profile.user) %>
+      <%= link_to "Edit", edit_profile_path(profile), :class => "editlink" %>
+    <% end %>
+  </span>
+
+    <h5>Social Media</h5>
+	<%= link_to profile.facebook, title: profile.facebook, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://2013.heatherharkness.com/wp-content/uploads/2013/10/FacebookLogoApril2013-150x150.jpg', size: '50x50', alt: 'facebook' %>
+	<% end %>
+	<%= link_to profile.twitter, title: profile.twitter, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://socialtimes.com/files/2013/11/Twitter.Logo_-150x150.png', size: '50x50', alt: 'twitter' %>
+	<% end %>
+	<%= link_to profile.instagram, title: profile.instagram, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://www.canvaspress.com/blog/wp-content/uploads/2013/01/instagram.jpg', size: '50x50', alt: 'instagram' %>
+	<% end %>
+	<%= link_to profile.linkedin, title: profile.linkedin, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://www.computerandyou.net/wp-content/uploads/2012/07/LinkedInLogo-150x150.png', size: '50x50', alt: 'linkedin' %>
+	<% end %>
+	<%= link_to profile.googleplus, title: profile.googleplus, rel: 'tooltip', relative: true do %>
+	  <%= image_tag 'http://premiumwebsites.net/wp-content/uploads/2011/11/Google-Plus-Logo-150x150.png', size: '50x50', alt: 'googleplus' %>
+	<% end %>
+
+    <h5>Contact</h5>
+    <span class="address"><%= profile.address %></span>
+    <span class="url"><%= link_to profile.url, profile.url  %></span>	
+	
+    <!-- <span class="facebook"><%#= link_to profile.facebook, profile.facebook  %></span>
+    <span class="url"><%#= link_to profile.twitter, profile.twitter  %></span>
+    <span class="url"><%#= link_to profile.instagram, profile.instagram  %></span>
+    <span class="url"><%#= link_to profile.linkedin, profile.linkedin  %></span>
+    <span class="url"><%#= link_to profile.googleplus, profile.googleplus  %></span> -->
+
+	<% if profile.related.present? %>				
+	    <h5>Related Profiles</h5>
+	    <span class="related"><%= profile.related %></span>
+	<% end %>
+
+<% end %>

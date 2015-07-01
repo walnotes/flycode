@@ -1,0 +1,56 @@
+<div class="row">
+  <span class="span2 name">
+    <%= link_to profile.name, profile %>
+  </span>
+  <span class="span6">
+    <% if profile.facebook.present? %>  
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-facebook-square fa-4x"), profile.facebook, title: profile.facebook, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+      
+    <% if profile.twitter.present? %>
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-twitter-square fa-4x"), profile.twitter, title: profile.twitter, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+      
+    <% if profile.instagram.present? %>
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-instagram fa-4x"), profile.instagram, title: profile.instagram, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+    
+    <% if profile.linkedin.present? %>
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-linkedin-square fa-4x"), profile.linkedin, title: profile.linkedin, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+
+    <% if profile.audio.present? %>
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-volume-up fa-4x"), profile.audio, title: profile.audio, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+
+    <% if profile.video.present? %>
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-play-circle-o fa-4x"), profile.video, title: profile.video, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+  
+    <% if profile.googleplus.present? %>        
+      <%= link_to content_tag(:i,nil, :class=>"fa fa-googleplus-square fa-4x"), profile.googleplus, title: profile.googleplus, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+
+    <% if profile.url.present? %>
+      <%= link_to "Website", profile.url, title: profile.url, rel: 'tooltip', relative: true, target: "_blank" %>
+    <% end %>
+
+    <% if profile.tag_list.present? %>
+      </br>
+      <%= profile.tag_list.join(',') %>
+    <% end %>
+
+    <% if profile.join.present? %>
+      <%= link_to "Join", profile.join, title: profile.join, rel: 'tooltip', relative: true, target: "_blank", class: "btn" %>
+    <% end %>
+    <% if profile.donate.present? %>
+      <%= link_to "Donate", profile.donate, title: profile.donate, rel: 'tooltip', relative: true, target: "_blank", class: "btn donate" %>
+    <% end %>
+  </span>
+  <span class="span2 name">
+    <% if current_user?(profile.user) %>
+      <%= link_to "Edit", edit_profile_path(profile), :class => "editlink btn btn-large btn-primary" %>
+      <%= link_to "Delete", profile_path(profile), method: :delete, data:{confirm: "Are you sure"}%>
+    <% end %>
+  </span>
+</div>

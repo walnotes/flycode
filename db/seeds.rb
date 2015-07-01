@@ -15,9 +15,17 @@
 # Organization.create!(:name => "Test", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51", :user => 1)
 
 #User.delete_all	
-User.find(7).delete
-new_user = User.create!(:name => "Retlaw", :email => "thisiswk@gmail.com", :password => "123faker", :password_confirmation => "123faker")
-new_user.organizations.create!(:name => "RetlawProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51")
+User.destroy_all
+Profile.destroy_all
+tag_list = ['hero', 'villan', 'joker', 'shorter', 'runner', 'shorter', 'thinner', 'funny', 'crazy', 'driver', 'swimmer', 'dancer', 'mucisian', 'guiatarist', 'developer', 'designer', 'quality engineer', 'program manager', 'product owner', 'indian', 'american', 'mexican', 'cricketer', 'pilot']
+names = ['jack', 'ivan', 'haousan', 'walter', 'makoto', 'kaitlin', 'yoko', 'feng ji', 'kishora', 'ravi raman', 'raghavan', 'siva', 'kai hu', 'kumaran', 'laura', 'george', 'boone', 'divya yadav', 'divya kaur', 'melvin', 'rajeev', 'steve lu', 'alex', 'sagar giri']
+names.each { |name|
+  name_with_no_space = name.downcase.split(' ').join
+  new_user = User.create!(:name => name.camelize, :email => "#{name_with_no_space}@gmail.com", :password => "123faker", :password_confirmation => "123faker")
+  tags = []
+  (0..rand(4)).each { |i| tags << tag_list[rand(tag_list.length)] }
+  new_user.profiles.create!(:name => "#{name.camelize} Profile", :url => "http://www.test.com/#{name_with_no_space}", :tag_list => tags.uniq)
+}
 #new_user.Organization.create!(:name => "RetlawProfile", :url => "http://www.test.com", :linkedin => "https://www.linkedin.com/pub/walter-koning/1/b02/a51")
 
 # User.new(name: "Example User", email: "user@example.com")
