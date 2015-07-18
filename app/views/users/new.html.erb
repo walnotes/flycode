@@ -1,8 +1,7 @@
 <% provide(:title, 'Create Account') %>
 <h1 class="text-left">Create an Account</h1>
 
-<div class="row">
-  <div class="span6">
+  <div class="col-xs-12">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name %>
@@ -20,4 +19,3 @@
       <%= f.submit "Create an Account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
-</div>

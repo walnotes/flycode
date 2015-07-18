@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-4">
     <%#= link_to profile.name, profile %>
-	<h4><%= profile.name %></h4>
+	<h3><%= profile.name %></h3>
   </div>
   <div class="col-xs-6">
     <% if profile.facebook.present? %>  
@@ -48,11 +48,11 @@
     <% end %>
   </div>
   <div class="col-xs-2 name">
-    <%= link_to "View", profile %>	  
-    <!-- <% if current_user?(profile.user) %>
-      <%#= link_to "Edit", edit_profile_path(profile), :class => "editlink btn btn-large btn-primary" %>
-      <%#= link_to "Delete", profile_path(profile), method: :delete, data:{confirm: "Are you sure"}%>
-    <% end %> -->
+    <!-- <%= link_to "View", profile %>	   -->
+    <% if current_user?(profile.user) %>
+      <%= link_to "Edit", edit_profile_path(profile), :class => "editlink btn btn-large btn-primary" %>
+      <span style="display:block;margin-top:10px;"><%= link_to "Delete", profile_path(profile), method: :delete, data:{confirm: "Are you sure"}%></span>
+    <% end %>
   </div>
 </div>
 

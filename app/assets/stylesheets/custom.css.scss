@@ -2,7 +2,7 @@
 
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
+$grayMediumLight: #a7a7a7;
 $grayLight: #eaeaea;
 $grayLighter: #eaeaea;
 $gray: #ddd;
@@ -60,7 +60,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $grayMediumLight;
 }
 
 p {
@@ -259,9 +259,9 @@ aside {
 }
 
 .name {
-  margin-top: 15px;
+  margin-top: 10px;
   display: block;
-  font-size: 130%;
+  font-size: 100%;
   color: black;
 }
 

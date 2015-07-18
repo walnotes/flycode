@@ -1,6 +1,39 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <!-- <aside class="span2">
+	<h1 class="text-left">Account</h1>
+
+	<div class="col-xs-12" style="display:block;padding-top:10px;">
+		<div class="col-xs-9">
+			<!-- <span><%#= gravatar_for @user %></span> -->
+			<span><%= @user.name %></span>
+			<!-- <span class="btn" style="padding-left:10px;">Follow</save> -->
+		</div>
+		<div class="col-xs-3" style="text-align:right;">
+			<%= link_to "edit", edit_user_path(current_user), :class => "editlink btn btn-large btn-primary" %>
+		</div>
+	</div>
+
+	<div class="col-xs-12" style="margin-top:100px;color:rgb(51,51,51);font-weight:bold;"><p>Search this account</p>
+	</div>
+
+	<%= render 'shared/search_user_form' %>
+	<% if @user.profiles.any? %>
+	<ol class="profiles">
+	    <%= render @profiles %>
+	</ol>
+	<%= will_paginate @profiles %>
+	<% end %>
+
+<!-- This account has <%#= @user.profiles.count %> profiles. -->
+	  
+<!-- <div class="row">
+	<div class="col-xs-12">
+      <%#= link_to "Create a profile", create_profile_path, :class => "movedown signup_button round"  %>
+	</div>
+</div> -->
+
+
+<!-- <div class="row">
+  <aside class="span2">
     <section>
       <h1>
         <%#= gravatar_for @user %>
@@ -10,28 +43,5 @@
     <section>
       <%#= render 'shared/stats' %>
     </section>
-  </aside> -->
-
-<!-- span10 makes it fit -->
-  <div class="span10">
-      <section>
-      <%= gravatar_for @user %>
-      <%= @user.name %>
-      </section>
-
-      <section>
-        <%= render 'shared/stats' %>
-      </section>
-
-      <h3>Profiles (<%= @user.profiles.count %>)</h3>
-      <%= link_to "Create a profile", create_profile_path, :class => "movedown signup_button round"  %>
-  </div>
-  <div class="">
-      <% if @user.profiles.any? %>
-        <ol class="profiles">
-            <%= render @profiles %>
-        </ol>
-        <%= will_paginate @profiles %>
-      <% end %>
-  </div>
-</div>
+  </aside>
+</div> -->

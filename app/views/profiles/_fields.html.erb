@@ -1,58 +1,66 @@
+<style>
+label {padding-top:10px;}
+</style>
+
 <div>
   <div class="form-group">
-    <span class="col-xs-1" style="color:red;"><%= f.label :name %></span>
+    <span class="col-xs-1"><%= f.label :name %></span>
     <span class="col-xs-11"><%= f.text_field :name, placeholder: 'Required' %></span>
     <!-- <small style="color:red;">* Required</small> -->
   </div>
-  <div class="form-group">
-    <span class="col-xs-1"><%= f.label :url %></span>
-    <span class="col-xs-11"><%= f.text_field :url %></span>
+
+  <div class="col-xs-12" style="margin-top:100px;color:rgb(51,51,51);font-weight:bold;"><p>Everything else is optional.</p>
   </div>
-  <div class="form-group">
-    <span class="col-xs-1"><i class='fa fa-facebook-square fa-4x'></i></span>
-	<span class="col-xs-11">
-    <!-- <%= f.label :facebook %> -->
-    <%= f.text_field :facebook, placeholder:'http://www.facebook.com/yourname' %>
-	</span>
-  </div>
-  <div class="form-group">
-    <span class="col-xs-1"><i class='fa fa-twitter-square fa-4x'></i></span>
-	<span class="col-xs-11">
-    <%= f.text_field :twitter, placeholder:'http://www.twitter.com/yourname' %>
-	</span>
-  </div>
-  <div class="form-group">
-    <span class="col-xs-1"><i class='fa fa-instagram fa-4x'></i></span>
-	<span class="col-xs-11">
-    <%= f.text_field :instagram, placeholder:'http://www.instagram.com/yourname' %>
-	</span>
-  </div>
-  <div class="form-group">
-    <span class="col-xs-1"><i class='fa fa-linkedin-square fa-4x'></i></span>
-	<span class="col-xs-11">
-    <%= f.text_field :linkedin, placeholder:'http://www.linkedin.com/yourname' %>
-	</span>
-  </div>
-  <div class="form-group">
-    <span class="col-xs-1"><i class='fa fa-volume-up fa-4x'></i></span>
-	<span class="col-xs-11">
-    <%= f.text_field :audio, placeholder:'http://www.soundcloud.com/yourname' %>
-	</span>
-  </div>
-  <div class="form-group">
-    <span class="col-xs-1"><i class='fa fa-play-circle-o fa-4x'></i></span>
-	<span class="col-xs-11">
-    <%= f.text_field :video, placeholder:'http://www.youtube.com/yourname' %>
-	</span>
-  </div>
+  
   <div class="form-group">
 	<span class="col-xs-1"><%= f.label :tag_list, "Tags" %></span>
 	<span class="col-xs-11">
     <%= f.text_field :tag_list, options = {'value' => @profile.tag_list.to_s, 'data-role' => 'tagsinput', placeholder: '(separate tags with commas)'} %>
 	</span>
   </div>
+  <div class="form-group">
+    <span class="col-xs-1"><%= f.label :url %></span>
+    <span class="col-xs-11"><%= f.text_field :url %></span>
+  </div>
+  <div class="form-group">
+    <span class="col-xs-1"><i class='fa fa-facebook-square fa-3x'></i></span>
+	<span class="col-xs-11">
+    <!-- <%= f.label :facebook %> -->
+    <%= f.text_field :facebook, placeholder:'http://www.facebook.com/yourname' %>
+	</span>
+  </div>
+  <div class="form-group">
+    <span class="col-xs-1"><i class='fa fa-twitter-square fa-3x'></i></span>
+	<span class="col-xs-11">
+    <%= f.text_field :twitter, placeholder:'http://www.twitter.com/yourname' %>
+	</span>
+  </div>
+  <div class="form-group">
+    <span class="col-xs-1"><i class='fa fa-instagram fa-3x'></i></span>
+	<span class="col-xs-11">
+    <%= f.text_field :instagram, placeholder:'http://www.instagram.com/yourname' %>
+	</span>
+  </div>
+  <div class="form-group">
+    <span class="col-xs-1"><i class='fa fa-linkedin-square fa-3x'></i></span>
+	<span class="col-xs-11">
+    <%= f.text_field :linkedin, placeholder:'http://www.linkedin.com/yourname' %>
+	</span>
+  </div>
+  <div class="form-group">
+    <span class="col-xs-1"><i class='fa fa-volume-up fa-3x'></i></span>
+	<span class="col-xs-11">
+    <%= f.text_field :audio, placeholder:'http://www.soundcloud.com/yourname' %>
+	</span>
+  </div>
+  <div class="form-group">
+    <span class="col-xs-1"><i class='fa fa-play-circle-o fa-3x'></i></span>
+	<span class="col-xs-11">
+    <%= f.text_field :video, placeholder:'http://www.youtube.com/yourname' %>
+	</span>
+  </div>
   <!-- <span class="span7 profile_edit">
-    <span class="span1"><i class='fa fa-google-plus-square fa-4x'></i></span>
+    <span class="span1"><i class='fa fa-google-plus-square fa-3x'></i></span>
     <%#= f.label :googleplus %>
     <%#= f.text_field :googleplus %>
   </span> -->

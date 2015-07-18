@@ -1,0 +1,14 @@
+<!-- <div class="row"> -->
+	<%= form_tag("/search_profile", method: "get") do %>
+	<div class="col-xs-9 col-sm-9">
+	  <%= text_field_tag(:name, @name, placeholder: 'Search this user by #tag') %>
+	</div>
+	<div class="col-xs-3 col-sm-3">
+	  <%= submit_tag("Search", class: 'btn btn-large btn-primary') %>
+	</div>
+	<% end %>
+	<!-- <div class="col-xs-12 col-sm-12">
+	  <%#= link_to "Create a new profile", create_profile_path, :class => "editlink btn btn-large btn-primary"  %>
+	</div> -->
+<!-- </div> -->
+

@@ -1,8 +1,7 @@
 <% provide(:title, "Update Account") %>
 <h1 class="text-left">Update Account</h1>
 
-<div class="row">
-  <div class="span6">
+  <div class="col-xs-12">
   	<%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -21,8 +20,6 @@
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
   </div>
 </div>
 
