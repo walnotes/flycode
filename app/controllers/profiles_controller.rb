@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   def search
     search_text = params[:name]
     @results = Profile.search(search_text)
-    @profiles = @results.paginate(page: params[:page], per_page: 10)
+    @profiles = @results.paginate(page: params[:page], per_page: 30)
   end
 
   def show
