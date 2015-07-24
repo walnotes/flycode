@@ -46,6 +46,21 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def copy
+    profile = Profile.find(params[:id]).dup
+    p profile
+    profile.save!
+    current_user.profiles << profile
+    redirect_to(:back)
+  end
+
+  # def steal
+  #   profile = Profile.find(params[:id]).clone
+  #   profile.save!
+  #   current_user.profiles << profile
+  #   render :plain => 'ok'
+  # end
+
   def destroy
     @profile.destroy
     flash[:success] = "Profile destroyed."

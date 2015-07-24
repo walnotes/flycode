@@ -67,6 +67,7 @@ Rails.application.routes.draw do
 
   get  '/search_profile', to: 'profiles#search'
   get  '/create_profile', to: 'profiles#new'
+  get  '/copy_profile', to: 'profiles#copy'
 
   get  '/signup',    to: 'users#new'
   get  '/signin',    to: 'sessions#new'

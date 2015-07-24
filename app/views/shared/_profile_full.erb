@@ -52,6 +52,8 @@
     <% if current_user?(profile.user) %>
       <%= link_to "Edit", edit_profile_path(profile), :class => "editlink btn btn-large btn-primary" %>
       <span style="display:block;margin-top:10px;"><%= link_to "Delete", profile_path(profile), method: :delete, data:{confirm: "Are you sure"}%></span>
+	<% else %>
+	<%= link_to "Copy this profile", copy_profile_path(:id => profile.id), :class => "editlink btn btn-large btn-primary", :style => "display:block; margin-top:10px;", data:{confirm: "Every time you save a profile it is saved to your account. You can save as many times your want and each time it will add another copy."} %>
     <% end %>
   </div>
 </div>
