@@ -51,6 +51,7 @@ class ProfilesController < ApplicationController
     p profile
     profile.save!
     current_user.profiles << profile
+    flash[:success] = "Profile copied to your account."
     redirect_to(:back)
   end
 

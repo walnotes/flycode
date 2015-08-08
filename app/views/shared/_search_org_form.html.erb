@@ -1,9 +1,11 @@
+<style>
+.search_field{margin-top:10px;}
+</style>
+
 	<%= form_tag("/search_profile", method: "get") do %>
-	<div class="col-xs-9 col-sm-9">
-	  <%= text_field_tag(:name, @name, placeholder: 'Search Flycode by @username or #tag') %>
-	</div>
-	<div class="col-xs-3 col-sm-3">
+	<div class="row">
 	  <%= submit_tag("Search", class: 'btn btn-large btn-primary') %>
+	  <%= text_field_tag(:name, @name, placeholder: 'Search Flycode by @username and tag', class: 'search_field') %>
 	</div>
 	<% end %>
 	<%#= link_to "Create a new profile", create_profile_path, :class => "editlink btn btn-large btn-primary"  %>
