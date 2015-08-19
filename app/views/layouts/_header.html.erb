@@ -1,4 +1,27 @@
 <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+				<li><%= link_to "Flycode", root_path, id: "logo" %></li>
+				<li><%= link_to "Create a new profile", create_profile_path  %></li>
+		          <% if signed_in? %>
+		            <li><%= link_to "All Users", users_path %></li>
+	                <li><%= link_to "Me", current_user %></li>
+	                <li class="divider"></li>
+	                <li>
+	                  <%= link_to "Sign out", signout_path, method: "delete" %>
+	                </li>
+		          <% else %>
+		            <li><%= link_to "Sign in", signin_path %></li>
+		          <% end %>
+			</ul>			
+        </div>
+    </div>
+</nav>
+
+<% if false %>
+<!-- 2015Aug19 WK - Replaced the dynamic aspect -->
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container-fluid">
         <div class="navbar-header">
@@ -33,6 +56,8 @@
         </div>
     </div>
 </nav>
+<% end %>
+
 
 <!-- <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
